@@ -6,5 +6,6 @@ step04.将项目中的公共代码抽取到一个工程（通过maven clean、in
 
 ## 开始引入微服务的基本知识
 ## 第一部分 服务注册
-step05.Eureka注册中心
+step05.搭建Eureka注册中心(@EnableEurekaServer表明是Eureka服务端)
 # 到这里通过支付服务去调用订单，一切显得很自然，但是当微服务多起来之后量变引起质变，所以需要引入服务治理框架 
+step06.将其他微服务注册进Eureka(@EnableEurekaClient表明Eureka客户端)

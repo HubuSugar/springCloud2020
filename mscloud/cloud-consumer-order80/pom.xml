@@ -12,6 +12,11 @@
     <artifactId>cloud-consumer-order80</artifactId>
 
     <dependencies>
+        <!--eureka-client-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
         <!--引入抽取的公用api包-->
         <dependency>
             <groupId>edu.hubu.springcloud</groupId>

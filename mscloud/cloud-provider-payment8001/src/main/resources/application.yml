@@ -14,6 +14,14 @@ spring:
     druid:
       validation-query: select 1
 
+eureka:
+  client:
+    # 表示自己是否注册进EurekaServer 默认为true
+    register-with-eureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: edu.hubu.springcloud.entities

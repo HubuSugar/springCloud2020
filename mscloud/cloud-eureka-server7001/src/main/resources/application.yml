@@ -8,6 +8,8 @@ spring:
 eureka:
   instance:
     hostname: localhost  # eureka服务端实例名称
+  server:
+    enable-self-preservation: true
   client:
     # 表示自己端就是注册中心
     fetch-registry: false
