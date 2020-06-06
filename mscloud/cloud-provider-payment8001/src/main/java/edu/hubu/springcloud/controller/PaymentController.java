@@ -4,11 +4,13 @@ import edu.hubu.springcloud.entities.CommonResult;
 import edu.hubu.springcloud.entities.Payment;
 import edu.hubu.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * created by Sugar  2020/5/30 22:11
@@ -22,6 +24,9 @@ public class PaymentController {
 
     @Value("${server.port}")
     private String servePort;
+
+    @Resource
+    private DiscoveryClient discoveryClient;
 
     @PostMapping(value = "/payment/create")
     public CommonResult create(@RequestBody Payment payment){
@@ -43,5 +48,21 @@ public class PaymentController {
         }else{
             return new CommonResult(444,"没有对应记录，ID:"+id,null);
         }
+    }
+
+    @GetMapping(value="/payment/discovery")
+    public Object discovery(){
+        List<String> services = discoveryClient.getServices();
+        for (String element:services) {
+            log.info("******element:"+element);
+        }
+
+        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+        for (ServiceInstance instance:instances){
+            log.info("******instance:"+instance.getServiceId() + "\t" + instance.getHost() + "\t" + instance.getUri());
+        }
+
+        return this.discoveryClient;
+
     }
 }
