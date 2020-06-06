@@ -1,9 +1,9 @@
 server:
-  port: 8001
+  port: 8002
 
 spring:
   application:
-    name: cloud-payment-service   # 微服务名称
+    name: cloud-payment-service
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource  # 当前数据源连接池
@@ -14,15 +14,16 @@ spring:
     druid:
       validation-query: select 1
 
+mybatis:
+  type-aliases-package: edu.hubu.springcloud.entities
+  mapper-locations: classpath:mapper/*.xml
+
 eureka:
   client:
     # 表示自己是否注册进EurekaServer 默认为true
     register-with-eureka: true
     fetch-registry: true
     service-url:
-#      defaultZone: http://localhost:7001/eureka,http://localhost:7001/eureka
+      #      defaultZone: http://localhost:7001/eureka,http://localhost:7001/eureka
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
 
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: edu.hubu.springcloud.entities

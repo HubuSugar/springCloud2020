@@ -4,7 +4,6 @@ import edu.hubu.springcloud.entities.CommonResult;
 import edu.hubu.springcloud.entities.Payment;
 import edu.hubu.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,14 +20,14 @@ public class PaymentController {
     PaymentService paymentService;
 
     @Value("${server.port}")
-    private String servePort;
+    private String serverPort;
 
     @PostMapping(value = "/payment/create")
     public CommonResult create(@RequestBody Payment payment){
         int result = paymentService.create(payment);
         log.info("****插入结果：" + result + "O(∩_∩)O哈哈~");
         if(result > 0){
-            return new CommonResult(200,"保存成功,端口：" + servePort,result);
+            return new CommonResult(200,"保存成功，端口：" + serverPort,result);
         }else{
             return new CommonResult(444,"保存失败");
         }
@@ -39,7 +38,7 @@ public class PaymentController {
         Payment payment = paymentService.getPaymentByid(id);
         log.info("****查询支付单号：" +  payment);
         if(payment != null){
-            return new CommonResult(200,"成功，端口：" + servePort,payment);
+            return new CommonResult(200,"成功，端口："+serverPort,payment);
         }else{
             return new CommonResult(444,"没有对应记录，ID:"+id,null);
         }
