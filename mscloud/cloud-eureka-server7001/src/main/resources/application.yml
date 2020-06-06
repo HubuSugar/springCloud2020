@@ -7,7 +7,9 @@ spring:
 
 eureka:
   instance:
-    hostname: localhost  # eureka服务端实例名称
+    #hostname: localhost  # eureka服务端实例名称
+    hostname: eureka7001.com    # 在localhost配置了映射
+
   server:
     enable-self-preservation: true
   client:
@@ -16,4 +18,5 @@ eureka:
     # 表示不向注册中心注册自己
     register-with-eureka: false
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://eureka7002.com:7002/eureka
+    # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
