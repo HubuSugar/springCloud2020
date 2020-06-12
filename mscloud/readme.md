@@ -19,3 +19,7 @@ step11.修改微服务的主机名称和ip显示
 
 ## 其他注册中心zookeeper、consul、nacos
 step12.将支付微服务注册进zookeeper微服务(安装zookeeper服务,服务相当于zookeeper的临时节点)  
+step13.将订单微服务注册进zookeeper  
+
+## 使用consul作为注册中心
+step14.将订单和支付微服务注册进consul注册中心
