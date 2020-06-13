@@ -31,6 +31,8 @@ step14.将订单和支付微服务注册进consul注册中心
   
 step15.自定义负载均衡规则  
   官方：不能放在@ComponentScan能扫描的包下  
+## Feign/OpenFeigh 生命式的web服务客户端（接口绑定器）
+step16.
   
 
 
