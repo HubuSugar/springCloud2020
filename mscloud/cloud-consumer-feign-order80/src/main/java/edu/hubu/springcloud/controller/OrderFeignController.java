@@ -27,4 +27,9 @@ public class OrderFeignController {
         return paymentFeignService.getPaymentByIdAndFeign(id);
     }
 
+    @GetMapping(value = "/consumer/payment/feign/get/{id}")
+    public  String getPaymentById(@PathVariable("id") Long id){
+        return paymentFeignService.getPaymentById(id);
+    }
+
 }

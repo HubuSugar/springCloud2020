@@ -35,6 +35,9 @@ step15.自定义负载均衡规则
 step16.引入OpenFeign, 客户端通过Feign调用微服务暴露的服务接口  
    （1）在主启动类上添加@EnableFeignClients
     (2) 引入微服务提供者的service接口，通过@FeignClient注解指定feign调用的那个微服务 
+step17.OpenFeign设置超时控制（默认等待时间是1s） 
+    在客户端的yml中通过ribbon配置ReadTimeout、ConnectTimeout
+
   
 
 

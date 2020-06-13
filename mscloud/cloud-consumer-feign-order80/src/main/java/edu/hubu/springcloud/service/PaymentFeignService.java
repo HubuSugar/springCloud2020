@@ -16,4 +16,7 @@ public interface PaymentFeignService {
 
     @GetMapping(value = "/payment/get/{id}")
     CommonResult<Payment> getPaymentByIdAndFeign(@PathVariable("id") Long id);
+
+    @GetMapping(value = "/payment/feign/get/{id}")
+    String getPaymentById(@PathVariable("id")  Long id);
 }
