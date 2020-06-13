@@ -2,8 +2,11 @@ package edu.hubu.springcloud.controller;
 
 import edu.hubu.springcloud.entities.CommonResult;
 import edu.hubu.springcloud.entities.Payment;
+import edu.hubu.springcloud.lb.LoadBalancer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
+import java.net.URI;
+import java.util.List;
 
 /**
  * created by Sugar  2020/5/31 0:12
@@ -26,6 +31,12 @@ public class OrderController {
 
     @Resource
     private RestTemplate restTemplate;
+
+    @Resource
+    private LoadBalancer loadBalancer;
+
+    @Resource
+    private DiscoveryClient discoveryClient;
 
     @PostMapping(value = "/consumer/payment/create")
     public CommonResult create(Payment payment){
@@ -51,6 +62,19 @@ public class OrderController {
             return entity.getBody();
         }else
             return new CommonResult<>(500,"服务器内部错误");
+    }
+
+    @GetMapping(value = "/consumer/payment/lb")
+    public String getPaymentLB(){
+        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+        if(instances == null || instances.size() <= 0){
+            return null;
+        }
+        ServiceInstance serviceInstance = loadBalancer.instances(instances);
+        URI uri = serviceInstance.getUri();
+        log.info("uri--->"+uri);
+        return restTemplate.getForObject(uri+"/payment/lb",String.class);
+
     }
 
 }
