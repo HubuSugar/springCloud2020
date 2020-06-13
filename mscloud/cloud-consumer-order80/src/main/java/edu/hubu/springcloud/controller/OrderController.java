@@ -4,6 +4,7 @@ import edu.hubu.springcloud.entities.CommonResult;
 import edu.hubu.springcloud.entities.Payment;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,4 +37,20 @@ public class OrderController {
     public CommonResult<Payment> getPaymentByid(@PathVariable("id") Long id){
         return restTemplate.getForObject(PAYMENT_URL+"/payment/get/"+id, CommonResult.class, id);
     }
+
+    /**
+     * 使用restTemplate的getForEntity
+     * @param id
+     * @return
+     */
+    @GetMapping(value="/consumer/payment/getEntity/{id}")
+    public CommonResult<Payment> getEntityPaymentByid(@PathVariable("id") Long id){
+
+        ResponseEntity<CommonResult> entity = restTemplate.getForEntity(PAYMENT_URL + "/payment/get/" + id, CommonResult.class, id);
+        if(entity.getStatusCode().is2xxSuccessful()){
+            return entity.getBody();
+        }else
+            return new CommonResult<>(500,"服务器内部错误");
+    }
+
 }

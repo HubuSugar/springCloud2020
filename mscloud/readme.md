@@ -24,9 +24,13 @@ step13.将订单微服务注册进zookeeper
 ## 使用consul作为注册中心
 step14.将订单和支付微服务注册进consul注册中心
 
-## Ribbon负载均衡+服务调用（将用户的请求平摊到多个服务器，nginx/LVS/F5）
-  Nginx负载均衡--客户端所有的请求都会交给nginx,由nginx统一转发
-  Ribbon负载均衡--本地负载均衡，在注册中心获取注册服务列表缓存到JVM本地,从而实现RPC调用
+## Ribbon负载均衡+服务调用（客户端负载均衡工具，将用户的请求平摊到多个服务器，nginx/LVS/F5）
+  Nginx负载均衡--客户端所有的请求都会交给nginx,由nginx统一转发  
+  Ribbon负载均衡--本地负载均衡，在注册中心获取注册服务列表缓存到JVM本地,从而实现RPC调用  
+  eureka-client依赖中已经引入了ribbon组件
+  
+step15.自定义负载均衡规则  
+  官方：不能放在@ComponentScan能扫描的包下  
   
 
 
