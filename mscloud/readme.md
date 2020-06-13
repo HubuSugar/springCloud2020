@@ -38,6 +38,9 @@ step16.引入OpenFeign, 客户端通过Feign调用微服务暴露的服务接口
 step17.OpenFeign设置超时控制（默认等待时间是1s） 
     在客户端的yml中通过ribbon配置ReadTimeout、ConnectTimeout
 
+step18.OpenFeign配置日志级别
+    在feign客户端yml通过logging配置设置（操作过程中debug前的空格忘记写了，坑）
+
   
 
 

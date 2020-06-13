@@ -14,3 +14,9 @@ ribbon:
   ReadTimeout: 5000   # 指的是建立连接所用的时间，适用于网络状况正常的情况下，连段连接所用的时间
   ConnectTimeout: 5000  # 指的是建立连接后从服务器获取到可用的资源所用的时间
 
+# Feign日志的级别
+logging:
+  level:
+    # feign日志以什么级别监控哪个接口
+    edu.hubu.springcloud.service.PaymentFeignService: debug
+
