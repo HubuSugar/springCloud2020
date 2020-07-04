@@ -42,7 +42,7 @@ step18.OpenFeign配置日志级别
     在feign客户端yml通过logging配置设置（操作过程中debug前的空格忘记写了，坑）
 ## Hystrix服务降级fallback、服务熔断break、服务限流flowlimit   
 step19.新建模拟服务降级的微服务
-
+step20.服务降级(jmeter压测8001，发现ok方法也变慢了),通过@hystrixCommand、@EnableCircuitBreaker注解对8001服务提供者异常（超时、运行时异常）进行兜底  
   
 
 
