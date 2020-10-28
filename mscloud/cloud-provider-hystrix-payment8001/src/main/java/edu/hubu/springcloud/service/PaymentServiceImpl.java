@@ -39,23 +39,20 @@ public class PaymentServiceImpl implements PaymentService {
         return "线程池：" + Thread.currentThread().getName() + " paymentInfo_OK id :" + id + "\t" + "O(∩_∩)O哈哈~";
     }
 
-    @HystrixCommand(fallbackMethod = "paymentInfo_TIMEOUTHandler",
-            commandProperties = {@HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value="3000")})
+
     @Override
-    public String paymentInfo_TIMEOUT(Long id) {
-
-        int timeNum = 5;
-        try {
-            TimeUnit.SECONDS.sleep(timeNum);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-//        Integer i = 10 / 0;
-        return "线程池：" + Thread.currentThread().getName() + " paymentInfo_OK id :" + id + "\t" + "耗时" + timeNum+ "秒钟";
+    @HystrixCommand(fallbackMethod = "paymentInfo_TimeOutHandler",commandProperties = {
+            @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value="5000")
+    })
+    public String paymentInfo_TIMEOUT(Long id)
+    {
+//        System.out.println("从客户端接收到的参数id为：" + id);
+//        long result = id * 5;
+        return "线程池:  "+Thread.currentThread().getName()+" id:  "+id+"\t"+"O(∩_∩)O哈哈~"+"  耗时(秒): ";
+    }
+    public String paymentInfo_TimeOutHandler(Long id)
+    {
+        return "线程池:  "+Thread.currentThread().getName()+"  8001系统繁忙或者运行报错，请稍后再试,id:  "+id+"\t"+"o(╥﹏╥)o";
     }
 
-
-    private String paymentInfo_TIMEOUTHandler(Long id){
-        return "线程池：" + Thread.currentThread().getName() + " paymentInfo_OK id :" + id + "\t" + "o(╥﹏╥)o" ;
-    }
 }

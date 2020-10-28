@@ -8,6 +8,10 @@ eureka:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka
 
-ribbon:
-  ReadTimeout: 5000
-  ConnectTimeout: 5000
+#ribbon:
+#  ReadTimeout: 5000
+#  ConnectTimeout: 5000
+# 因为客户端调用用的是feign的接口绑定器
+feign:
+  hystrix:
+    enabled: true    # 开启feign的服务降级
