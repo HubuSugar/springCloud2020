@@ -48,6 +48,7 @@ public class PaymentServiceImpl implements PaymentService {
     {
 //        System.out.println("从客户端接收到的参数id为：" + id);
 //        long result = id * 5;
+//        int age = 10 / 0;
         return "线程池:  "+Thread.currentThread().getName()+" id:  "+id+"\t"+"O(∩_∩)O哈哈~"+"  耗时(秒): ";
     }
     public String paymentInfo_TimeOutHandler(Long id)
