@@ -54,11 +54,14 @@ step24.服务熔断：应对雪崩效应的微服务服务链路保护机制
        当失败次数达到一定比例、或者在一定时间达到多少次，保险丝会跳闸，当请求正常时保险丝会尝试放过请求(有一个半开状态)  
 step25.hystrix服务监控:搭建hystrix服务监控平台(EnableHystrixDashboard)            
 
-## 本章节开始springCloud gateway网关(gateway包括路由route、断言predict、过滤器filter)   
+## 本章节开始springCloud gateway网关(gateway包括路由route、断言predictate、过滤器filter)   
 step26.网关的yml配置和代码配置  
        注：代码在配置路由转发时，代码的实现逻辑是将path后的路由转发到uri地址下(小坑)  
        1.请求在什么时间点后生效(-after)
        2.请求是否带有cookies
        3.请求是否带有请求头    
+       
+## spring cloud config/bus
+step27.
 
 
