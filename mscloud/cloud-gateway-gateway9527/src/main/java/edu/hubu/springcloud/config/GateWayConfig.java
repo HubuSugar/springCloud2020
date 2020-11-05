@@ -19,10 +19,14 @@ public class GateWayConfig {
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder routeLocatorBuilder){
 
+        /**
+         * 经过测试会将path后面的路由，转发到uri这个地址下
+         */
         RouteLocatorBuilder.Builder routes = routeLocatorBuilder.routes();
-        routes.route("hubu-payment-route",r -> r.
-                                                path("huxiaoge").
-                                                uri("https://www.baidu.com/")).build();
-        return  routes.build();
+
+        routes.route("hubu-payment-route",
+                r -> r.path("/guoji")
+                        .uri("http://news.baidu.com")).build();
+        return routes.build();
     }
 }
