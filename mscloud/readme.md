@@ -56,5 +56,6 @@ step25.hystrix服务监控:搭建hystrix服务监控平台(EnableHystrixDashboar
 
 ## 本章节开始springCloud gateway网关(gateway包括路由route、断言predict、过滤器filter)   
 step26.网关的yml配置和代码配置  
+       注：代码在配置路由转发时，代码的实现逻辑是将path后的路由转发到uri地址下(小坑)      
 
 
