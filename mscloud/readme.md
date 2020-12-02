@@ -62,6 +62,10 @@ step26.网关的yml配置和代码配置
        3.请求是否带有请求头    
        
 ## spring cloud config/bus
-step27.
+step27.config服务端搭建，从github仓库读取配置，注意：目前github主分支变成main分支  
+step28.config客户端搭建，从分布式配置中心configServer读取配置  
+step29.遇到的问题：配置中心的配置更新之后，configServer可以自动获取到最新配置，但是configClient则无法从configServer获取最新配置，如何解决？  
+       1. actuator插件，2.yml文件暴露监控点，3.业务类上加上@RefreshScope注解，4，手动发送POST请求触发（ip:port/actuator/refresh）  
+       更优化的解决方案：bus --- 达到一处通知，处处生效或者定点通知的目的
 
 
