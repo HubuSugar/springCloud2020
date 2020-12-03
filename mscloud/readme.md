@@ -67,5 +67,7 @@ step28.config客户端搭建，从分布式配置中心configServer读取配置
 step29.遇到的问题：配置中心的配置更新之后，configServer可以自动获取到最新配置，但是configClient则无法从configServer获取最新配置，如何解决？  
        1. actuator插件，2.yml文件暴露监控点，3.业务类上加上@RefreshScope注解，4，手动发送POST请求触发（ip:port/actuator/refresh）  
        更优化的解决方案：bus --- 达到一处通知，处处生效或者定点通知的目的
-
+       广播通知：curl -X POST "http://localhost:3344/actuator/bus-refresh"  
+       定点通知：curl -X POST "http://localhost:3344/actuator/bus-refresh/config-client:3355"   
+      
 
