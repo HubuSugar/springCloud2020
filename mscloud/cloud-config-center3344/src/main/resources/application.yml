@@ -16,8 +16,21 @@ spring:
           default-label: main
       label: main
 
+  # rabbitmq的地址
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka
+
+# 暴露刷新碰撞点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
