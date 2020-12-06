@@ -1,5 +1,5 @@
 server:
-  port: 8802
+  port: 8803
 
 spring:
   application:
@@ -22,13 +22,14 @@ spring:
           destination: studyExchange
           content-type: application/json
           binder: defaultRabbit
-          #group: hubuSugar  # 解决消息的重复消费和持久化
+          group: hubuSugar
+
 eureka:
   client:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/
   instance:
-    instance-id: receive-8802.com
-    lease-renewal-interval-in-seconds: 2
-    lease-expiration-duration-in-seconds: 5
+    instance-id: receive-8803.com
     prefer-ip-address: true
+    lease-renewal-interval-in-seconds:  2
+    lease-expiration-duration-in-seconds:  5
