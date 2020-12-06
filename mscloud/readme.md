@@ -69,5 +69,9 @@ step29.遇到的问题：配置中心的配置更新之后，configServer可以�
        更优化的解决方案：bus --- 达到一处通知，处处生效或者定点通知的目的
        广播通知：curl -X POST "http://localhost:3344/actuator/bus-refresh"  
        定点通知：curl -X POST "http://localhost:3344/actuator/bus-refresh/config-client:3355"   
+
+## 本章要开始消息编程模型的学习（spring cloud stream）
+在微服务中，我们可能会用到不同的消息中间件rabbitMQ、kafka、RocketMQ等，所以我们想有一个框架能像JDBC屏蔽Oracle、Mysql数据库  
+的差异一样帮我们屏蔽不同消息中间件的差异  
       
 
