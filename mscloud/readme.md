@@ -78,3 +78,7 @@ step31.消息的重复消费和消息的持久化（通过分组的方法）
        重复消费：当有多个消费者时，一条消息会被多次消费
        消息丢失：当消费者宕机或者不存在时，消息消费会丢失  
 
+## 本章开始学习微服务的链路监控sleuth + zipkin
+zipkin下载地址：https://dl.bintray.com/openzipkin/maven/io/zipkin/java/zipkin-server/，下载exec.jar文件，以java -jar的方式运行    
+    
+
