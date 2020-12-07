@@ -82,3 +82,6 @@ step31.消息的重复消费和消息的持久化（通过分组的方法）
 zipkin下载地址：https://dl.bintray.com/openzipkin/maven/io/zipkin/java/zipkin-server/，下载exec.jar文件，以java -jar的方式运行    
     
 
+## 开始spring cloud alibaba的学习
+#### 服务注册与发现
+step32.基于nacos的服务注册功能
