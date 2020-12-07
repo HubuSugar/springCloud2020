@@ -22,7 +22,7 @@ spring:
           destination: studyExchange
           content-type: application/json
           binder: defaultRabbit
-          #group: hubuSugar  # 解决消息的重复消费和持久化
+          group: hubuSugar  # 解决消息的重复消费和持久化
 eureka:
   client:
     service-url:

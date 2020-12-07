@@ -5,6 +5,12 @@ spring:
   application:
     name: cloud-payment-service   # 微服务名称
 
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1     # 采样值
+
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource  # 当前数据源连接池
     driver-class-name: org.gjt.mm.mysql.Driver  #mysql驱动包
