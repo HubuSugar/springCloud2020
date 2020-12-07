@@ -85,3 +85,9 @@ zipkin下载地址：https://dl.bintray.com/openzipkin/maven/io/zipkin/java/zipk
 ## 开始spring cloud alibaba的学习
 #### 服务注册与发现
 step32.基于nacos的服务注册功能
+       nacos支持AP、CP两种模式：切换 curl -X PUT '$NACOS_SERVER:8848/nacos/v1/ns/operator/switches?entry=serverMode&value=CP'  
+
+#### 服务配置
+step33.基于nacos的配置中心  
+配置规则：${prefix}-${spring.profile.active}.${file-extension}, ${prefix}默认为${spring.application.name}
+
