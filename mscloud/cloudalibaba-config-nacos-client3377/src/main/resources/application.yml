@@ -1,3 +1,5 @@
 spring:
   profiles:
-    active: dev  # 读取的环境
+#    active: dev  # 读取开发环境
+#    active: test  # 读取测试环境
+     active: info
