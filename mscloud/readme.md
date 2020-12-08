@@ -90,4 +90,7 @@ step32.基于nacos的服务注册功能
 #### 服务配置
 step33.基于nacos的配置中心  
 配置规则：${prefix}-${spring.profile.active}.${file-extension}, ${prefix}默认为${spring.application.name}
+step34.nacos集群搭建  
+（1）配置mysql持久化  
+![image](https://github.com/HubuSugar/springCloud2020/blob/master/mscloud/assets/mysql-settings.png)
 
