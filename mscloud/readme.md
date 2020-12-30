@@ -91,6 +91,13 @@ step32.基于nacos的服务注册功能
 step33.基于nacos的配置中心  
 配置规则：${prefix}-${spring.profile.active}.${file-extension}, ${prefix}默认为${spring.application.name}
 step34.nacos集群搭建  
-（1）配置mysql持久化  
-![image](https://share.weiyun.com/FyJtnNbZ)
+* 配置mysql持久化  
+ ![image](https://github.com/HubuSugar/springCloud2020/blob/master/mscloud/assets/mysql-settings.jpg)  
+* 集群配置
+ ![image](https://github.com/HubuSugar/springCloud2020/blob/master/mscloud/assets/nacos-settings.png)  
+* nginx配置
+ ![image](https://github.com/HubuSugar/springCloud2020/blob/master/mscloud/assets/nginx-settings.png)  
+## 本章开始流控学习sentinel  
+注意：流控解析说明见8401服务readme
+step34.流控模式测试api
 

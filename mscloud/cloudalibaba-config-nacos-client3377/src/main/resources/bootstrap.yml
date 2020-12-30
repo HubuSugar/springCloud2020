@@ -12,4 +12,4 @@ spring:
         server-addr: localhost:8848
         file-extension: yaml  #指定文件的后缀
         group: DEV_GROUP  # 读取的分组名称
-        namespace: 1482f062-049d-49d2-8281-0d9860262a7e
+        namespace: 8292cb5a-51a3-49df-85a5-5e8c698de754
