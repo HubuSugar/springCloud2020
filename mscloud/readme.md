@@ -93,9 +93,9 @@ step33.基于nacos的配置中心
 step34.nacos集群搭建  
 * 配置mysql持久化  
  ![image](https://github.com/HubuSugar/springCloud2020/blob/master/mscloud/assets/mysql-settings.jpg)  
-* 集群配置
+* 集群配置  
  ![image](https://github.com/HubuSugar/springCloud2020/blob/master/mscloud/assets/nacos-settings.png)  
-* nginx配置
+* nginx配置  
  ![image](https://github.com/HubuSugar/springCloud2020/blob/master/mscloud/assets/nginx-settings.png)  
 ## 本章开始流控学习sentinel  
 注意：流控解析说明见8401服务readme
