@@ -99,5 +99,7 @@ step34.nacos集群搭建
  ![image](https://github.com/HubuSugar/springCloud2020/blob/master/mscloud/assets/nginx-settings.png)  
 ## 本章开始流控学习sentinel  
 注意：流控解析说明见8401服务readme
-step34.流控模式测试api
-
+step34.流控模式测试api  
+@SentinelResource注解介绍  
+blockhandler:指定用于违背流控策略处理的兜底方法  
+blockhandlerClass:指定用于处理全局流控策略处理的兜底类  
