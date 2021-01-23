@@ -7,8 +7,10 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848 #Nacos服务注册中心地址
-        namespace: 8292cb5a-51a3-49df-85a5-5e8c698de754  #注册进的命名空间
+        #注意：这里因为nginx配置的是 / 所以末尾的/不能忘记，否则找不到nacos服务
+        server-addr: http://192.168.1.12:8387/ #Nacos服务注册中心地址,通过nginx转发的端口地址
+#        namespace: 1482f062-049d-49d2-8281-0d9860262a7e
+    #    namespace: 8292cb5a-51a3-49df-85a5-5e8c698de754  #注册进的命名空间
     sentinel:
       transport:
         #配置sentinel dashboard地址
