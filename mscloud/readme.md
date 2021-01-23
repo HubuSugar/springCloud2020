@@ -101,5 +101,11 @@ step34.nacos集群搭建
 注意：流控解析说明见8401服务readme
 step34.流控模式测试api  
 @SentinelResource注解介绍  
-blockhandler:指定用于违背流控策略处理的兜底方法  
-blockhandlerClass:指定用于处理全局流控策略处理的兜底类  
+blockhandler:指定用于违背流控策略处理的兜底方法   
+blockhandlerClass:指定用于处理全局流控策略处理的兜底类   
+fallbackhandler:用于指定java异常时的兜底方法  
+fallbackhandlerclass:用于指定异常时的兜底类  
+step35.将sentinel dashboard配置的流控规则持久化进nacos  
+注意：本次使用的是nacos集群 1 nginx + 3 nacos + 1 mysql  
+     由于nginx的转发路径是： /,在服务注册进nacos集群的时候需要在地址后加上 /   
+     持久化时的：地址不用加 /(具体做法见：8401 .yml文件说明)  
