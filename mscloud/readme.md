@@ -108,4 +108,7 @@ fallbackhandlerclass:用于指定异常时的兜底类
 step35.将sentinel dashboard配置的流控规则持久化进nacos  
 注意：本次使用的是nacos集群 1 nginx + 3 nacos + 1 mysql  
      由于nginx的转发路径是： /,在服务注册进nacos集群的时候需要在地址后加上 /   
-     持久化时的：地址不用加 /(具体做法见：8401 .yml文件说明)  
+     持久化时的：地址不用加 /，否则（java.lang.IllegalArgumentException: Description must not be null）(具体做法见：8401 .yml文件说明) 
+
+## 本章学习spring cloud alibaba seata分布式事务  
+step36.seata初始化数据库配置脚本    
